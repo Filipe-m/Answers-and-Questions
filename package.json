@@ -1,0 +1,16 @@
+{
+  "name": "answersandquestions",
+  "version": "1.0.0",
+  "description": "Pagina de perguntas e respostas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Filipe",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
