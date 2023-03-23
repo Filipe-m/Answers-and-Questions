@@ -1,0 +1,9 @@
+.perguntar{
+  margin-top: 1rem;
+}
+
+body{
+  background-image: url("/assets/background-blury.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
