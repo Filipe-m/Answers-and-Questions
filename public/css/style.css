@@ -1,9 +1,28 @@
-.perguntar{
+.perguntar {
   margin-top: 1rem;
 }
 
-body{
+body {
   background-image: url("/assets/background-blury.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
+}
+
+.nav-logo{
+  width: 1.2rem;
+}
+
+.form-card{
+  margin-top: 1rem;
+}
+
+.logo{
+  color: black;
+}
+
+.logo:hover{
+  color: black;
+  scale: 1.1;
+  
 }
