@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import connection from './database/database.js'
+import Pergunta from './database/Pergunta.js'
 
 connection
   .authenticate()
@@ -30,7 +31,12 @@ app.get('/perguntar', (req, res) => {
 app.post('/salvarPergunta', (req, res) => {
   const titulo = req.body.titulo
   const descricao = req.body.descricao
-  res.send(`Chegou o formulário titulo: ${titulo}, descrição: ${descricao}`)
+  Pergunta.create({
+    titulo: titulo,
+    descricao: descricao
+  }).then(() => {
+    res.redirect('/')
+  })
 })
 
 app.listen(3333, () => {
