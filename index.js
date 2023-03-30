@@ -1,5 +1,15 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import connection from './database/database.js'
+
+connection
+  .authenticate()
+  .then(() => {
+    console.log('Successful database connection')
+  })
+  .catch(msg => {
+    print(msg)
+  })
 
 const app = express()
 
