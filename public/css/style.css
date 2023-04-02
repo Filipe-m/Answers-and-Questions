@@ -9,20 +9,37 @@ body {
   height: 100vh;
 }
 
-.nav-logo{
+.nav-logo {
   width: 1.2rem;
 }
 
-.form-card{
+.form-card {
   margin-top: 1rem;
 }
 
-.logo{
+.logo {
   color: black;
 }
 
-.logo:hover{
+.logo:hover {
   color: black;
   scale: 1.1;
-  
+
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.perguntar {
+  margin: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .perguntar {
+    margin: 15px;
+  }
 }
