@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import connection from './database/database.js'
 import Pergunta from './database/Pergunta.js'
+import Resposta from './database/Resposta.js'
 
 connection
   .authenticate()
@@ -40,6 +41,39 @@ app.post('/salvarPergunta', (req, res) => {
     descricao: descricao
   }).then(() => {
     res.redirect('/')
+  })
+})
+
+app.get('/pergunta/:id', (req, res) => {
+  let id = req.params.id
+  Pergunta.findOne({ where: { id: id } }).then(pergunta => {
+    // id is valid
+    if (pergunta != undefined) {
+      Resposta.findAll({
+        where: { perguntaId: pergunta.id },
+        order: [['id', 'DESC']]
+      }).then(respostas => {
+        res.render('pergunta', {
+          pergunta: pergunta,
+          respostas: respostas
+        })
+      })
+    }
+    //id is invalid
+    else {
+      res.redirect('/')
+    }
+  })
+})
+
+app.post('/responder', (req, res) => {
+  const corpo = req.body.corpo
+  const perguntaId = req.body.pergunta
+  Resposta.create({
+    corpo: corpo,
+    perguntaId: perguntaId
+  }).then(() => {
+    res.redirect(`/pergunta/${perguntaId}`)
   })
 })
 
