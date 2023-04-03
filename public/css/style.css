@@ -59,6 +59,8 @@ body {
 
 .respostas {
   margin-top: 2rem;
+  display: grid;
+  gap: 0.5rem;
 }
 
 .respostas>h3 {
