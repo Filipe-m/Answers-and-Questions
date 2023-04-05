@@ -11,7 +11,7 @@ Essa página visa criar uma interface em estilo fórum aonde usuarios podem faze
 **Back-end:** Node, Express, MySQL, SQLite
 
 
-## Autore
+## Autor
 
 - [#filipe-m](https://github.com/Filipe-m)
 
